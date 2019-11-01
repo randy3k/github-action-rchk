@@ -17,6 +17,10 @@ R --slave -e "remotes::install_local(repos = 'https://cloud.r-project.org', upgr
 
 PACKAGE="$2"
 
+if [ -z "$PACKAGE" ]; then
+    PACKAGE=$(echo ${GITHUB_REPOSITORY#*/})
+fi
+
 echo "running rchk test for $PACKAGE"
 
 cd /opt/R-svn/
