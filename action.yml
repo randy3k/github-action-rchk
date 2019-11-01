@@ -1,0 +1,12 @@
+name: 'rchk'
+inputs:
+  apt:
+    default: ''
+  package:
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.apt }}
+    - ${{ inputs.package }}
