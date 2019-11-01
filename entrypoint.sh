@@ -17,7 +17,7 @@ R --slave -e "remotes::install_local(repos = 'https://cloud.r-project.org', upgr
 
 PACKAGE="$2"
 
-echo "PACKAGE = $PACKAGE"
+echo "running rchk test for $PACKAGE"
 
 cd /opt/R-svn/
 . /opt/rchk/scripts/cmpconfig.inc
