@@ -27,11 +27,14 @@ cd /opt/R-svn/
 . /opt/rchk/scripts/cmpconfig.inc
 /opt/rchk/scripts/check_package.sh $PACKAGE
 if [ $(cat packages/lib/$PACKAGE/libs/$PACKAGE.so.bcheck | wc -l) -gt 1 ]; then
-  cat packages/lib/$PACKAGE/libs/$PACKAGE.so.bcheck
   FAIL=1
 fi
 if [ $(cat packages/lib/$PACKAGE/libs/$PACKAGE.so.maacheck | wc -l) -gt 1 ]; then
-  cat packages/lib/$PACKAGE/libs/$PACKAGE.so.maacheck
   FAIL=1
 fi
+cat packages/lib/$PACKAGE/libs/$PACKAGE.so.maacheck
+cat packages/lib/$PACKAGE/libs/$PACKAGE.so.bcheck
+
 [ -z "$FAIL" ] || exit 1
+
+echo "rchk test success!"

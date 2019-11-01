@@ -3,7 +3,7 @@ inputs:
   apt:
     default: ''
   package:
-    required: true
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
