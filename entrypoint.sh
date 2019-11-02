@@ -13,7 +13,7 @@ fi
 
 R --slave -e "install.packages('remotes', repos = 'https://cloud.r-project.org')"
 
-R --slave -e "remotes::install_local(repos = 'https://cloud.r-project.org', upgrade = 'never')"
+R --slave -e "remotes::install_local(repos = 'https://cloud.r-project.org')"
 
 PACKAGE="$INPUT_PACKAGE"
 
