@@ -6,7 +6,7 @@ cd /opt/R-svn/
 . /opt/rchk/scripts/cmpconfig.inc
 cd -
 
-APT="$1"
+APT="$INPUT_APT"
 if [ -n "$APT" ]; then
     sudo apt-get install $APT -y
 fi
@@ -15,7 +15,7 @@ R --slave -e "install.packages('remotes', repos = 'https://cloud.r-project.org')
 
 R --slave -e "remotes::install_local(repos = 'https://cloud.r-project.org', upgrade = 'never')"
 
-PACKAGE="$2"
+PACKAGE="$INPUT_PACKAGE"
 
 if [ -z "$PACKAGE" ]; then
     PACKAGE=$(echo ${GITHUB_REPOSITORY#*/})
